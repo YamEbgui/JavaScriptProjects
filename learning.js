@@ -1,11 +1,11 @@
-const num = 546
-let sum = 0
+//const num = 546
+//let sum = 0
 // your code goes here
-function sumThereDigitNumbers(nu){
-    sum=(nu%10)+(Math.floor((nu%100)/10))+Math.floor(nu/100)
-}
-sumThereDigitNumbers(num)
-console.log(sum);
+//function sumThereDigitNumbers(nu){
+//    sum=(nu%10)+(Math.floor((nu%100)/10))+Math.floor(nu/100)
+//}
+//sumThereDigitNumbers(num)
+//console.log(sum);
 
 const a = 1; b = -1; c = 1;  // stands for x**2 - 6*x + 9 = 0
 let solutionA = solutionB = 0
@@ -18,3 +18,23 @@ function solve(){
 }
 solve();
 console.log(solutionA, solutionB)
+
+const num = NaN
+let absolute;
+// your code goes here
+function absNumber(){
+    if(num<0){
+        absolute=0-num;
+    }
+    else{
+        if(absolute>0){
+            absolute=num;
+        }
+        else{
+            absolute=0;
+        }
+    }
+    
+}
+absNumber();
+console.log(absolute)
