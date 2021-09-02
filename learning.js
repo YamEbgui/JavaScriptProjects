@@ -68,45 +68,65 @@
 // console.log("Range:"+range+"\nMedian:"+median+"\nHalf Range:"+halfRange);
 
 
-// list of Formula 1 champions since the year 2000
-const formula1Champions = [
-    "Schumacher",
-    "Schumacher",
-    "Schumacher",
-    "Schumacher",
-    "Schumacher",
-    "Alonso",
-    "Alonso",
-    "Räikkönen",
-    "Hamilton",
-    "Button",
-    "Vettel",
-    "Vettel",
-    "Vettel",
-    "Vettel",
-    "Hamilton",
-    "Hamilton",
-    "Rosberg",
-    "Hamilton",
-    "Hamilton",
-    "Hamilton",
-    "Hamilton"
-]
-let winners = {}
+// // list of Formula 1 champions since the year 2000
+// const formula1Champions = [
+//     "Schumacher",
+//     "Schumacher",
+//     "Schumacher",
+//     "Schumacher",
+//     "Schumacher",
+//     "Alonso",
+//     "Alonso",
+//     "Räikkönen",
+//     "Hamilton",
+//     "Button",
+//     "Vettel",
+//     "Vettel",
+//     "Vettel",
+//     "Vettel",
+//     "Hamilton",
+//     "Hamilton",
+//     "Rosberg",
+//     "Hamilton",
+//     "Hamilton",
+//     "Hamilton",
+//     "Hamilton"
+// ]
+// let winners = {}
 
-function countWin(driver) {
-    let count=0;
-    if(!winners.hasOwnProperty(driver))
-    {
-        winners[driver]=count;
-    }
-    for (let i=0;i<formula1Champions.length;i++){
-        if (formula1Champions[i]===driver){
-            count++;
+// function countWin(driver) {
+//     let count=0;
+//     if(!winners.hasOwnProperty(driver))
+//     {
+//         winners[driver]=count;
+//     }
+//     for (let i=0;i<formula1Champions.length;i++){
+//         if (formula1Champions[i]===driver){
+//             count++;
+//         }
+//     }
+//     winners[driver]=count;
+// }
+
+// formula1Champions.forEach(countWin);
+// console.log(winners);
+
+function guessCity(capital, coastal, famous, ancient) {
+    if(capital === 'true'){
+        return "Jerusalem";
+    }else if (coastal === 'true'){
+        if(ancient=== 'true'){
+            return "Acre";
+        }else if (famous === 'true'){
+            return "Tel Aviv";
+        }else {
+            return "Zikim"
         }
+    }else if (ancient === 'true'){
+        return "Katzrin";
+    }else{
+        return "Musmus"
     }
-    winners[driver]=count;
 }
 
-formula1Champions.forEach(countWin);
-console.log(winners);
+console.log(guessCity('true', 'false', 'true', 'true'));
