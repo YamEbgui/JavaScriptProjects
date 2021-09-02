@@ -39,31 +39,74 @@
 // absNumber();
 // console.log(absolute)
 
+// const grades =  [73, 91, 88, 56, 62, 84, 95, 96, 88, 92]
+// // your code goes here
+// let range=0;
+// let median=0;
+// let halfRange=0;
 
-const grades =  [73, 91, 88, 56, 62, 84, 95, 96, 88, 92]
-// your code goes here
-let range=0;
-let median=0;
-let halfRange=0;
-
-function calculate()
-{
-    //this section solve the range 
-    let newArray=grades.slice(0);
-    newArray=newArray.sort();
-    range=newArray[newArray.length-1]-newArray[0];
-    //this section solve the median
-    if(newArray.length%2==0){
-        median=(newArray[newArray.length/2]+newArray[(newArray.length/2)-1])/2
-    } 
-    else{
-        median=newArray[Math.floor(grades.length/2)]
-    }
-    //this section solve the halfRange
-    newArray=grades.slice(Math.floor(grades.length/2));
-    newArray=newArray.sort();
-    halfRange=newArray[newArray.length-1]-newArray[0];
+// function calculate()
+// {
+//     //this section solve the range 
+//     let newArray=grades.slice(0);
+//     newArray=newArray.sort();
+//     range=newArray[newArray.length-1]-newArray[0];
+//     //this section solve the median
+//     if(newArray.length%2==0){
+//         median=(newArray[newArray.length/2]+newArray[(newArray.length/2)-1])/2
+//     } 
+//     else{
+//         median=newArray[Math.floor(grades.length/2)]
+//     }
+//     //this section solve the halfRange
+//     newArray=grades.slice(Math.floor(grades.length/2));
+//     newArray=newArray.sort();
+//     halfRange=newArray[newArray.length-1]-newArray[0];
     
+// }
+// calculate()
+// console.log("Range:"+range+"\nMedian:"+median+"\nHalf Range:"+halfRange);
+
+
+// list of Formula 1 champions since the year 2000
+const formula1Champions = [
+    "Schumacher",
+    "Schumacher",
+    "Schumacher",
+    "Schumacher",
+    "Schumacher",
+    "Alonso",
+    "Alonso",
+    "Räikkönen",
+    "Hamilton",
+    "Button",
+    "Vettel",
+    "Vettel",
+    "Vettel",
+    "Vettel",
+    "Hamilton",
+    "Hamilton",
+    "Rosberg",
+    "Hamilton",
+    "Hamilton",
+    "Hamilton",
+    "Hamilton"
+]
+let winners = {}
+
+function countWin(driver) {
+    let count=0;
+    if(!winners.hasOwnProperty(driver))
+    {
+        winners[driver]=count;
+    }
+    for (let i=0;i<formula1Champions.length;i++){
+        if (formula1Champions[i]===driver){
+            count++;
+        }
+    }
+    winners[driver]=count;
 }
-calculate()
-console.log("Range:"+range+"\nMedian:"+median+"\nHalf Range:"+halfRange);
+
+formula1Champions.forEach(countWin);
+console.log(winners);
